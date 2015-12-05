@@ -14,12 +14,18 @@
      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
      http://www.springframework.org/schema/mvc 
      http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-
-	<!--加载配置文件-->
-	<context:property-placeholder location="classpath:jdemo.properties" />
-	<!--指定spring注解注入层-->
-	<context:component-scan base-package="com.jbuilder" />
-	<!--数据库配置-->
-	<import resource="jdemo-db.xml"/>
+	<!--加载配置文件 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdemo-db.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!--指定spring注解注入层 -->
+	<context:component-scan base-package="com.jbuilder.master.dao.*, com.jbuilder.master.service.*" />
+	<!--数据库配置 -->
+	<import resource="classpath:jdemo-db.xml" />
 
 </beans>

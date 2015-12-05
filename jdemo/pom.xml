@@ -9,6 +9,8 @@
 		<org.springframework.version>4.2.3.RELEASE</org.springframework.version>
 		<mysql.version>5.1.24</mysql.version>
 		<c3p0.version>0.9.1.2</c3p0.version>
+		<jackson.version>2.6.2</jackson.version>
+		<log4j.version>1.2.9</log4j.version>
 	</properties>
 	<!-- Core utilities used by other modules. Define this if you use Spring 
 		Utility APIs (org.springframework.core.*/org.springframework.util.*) -->
@@ -142,6 +144,18 @@
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>${c3p0.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 	</dependencies>
 </project>
