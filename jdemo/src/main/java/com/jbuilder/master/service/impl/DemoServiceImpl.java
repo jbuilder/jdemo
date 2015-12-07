@@ -15,6 +15,7 @@ public class DemoServiceImpl implements DemoService {
 
 	@Transactional(rollbackFor=Exception.class)
 	public boolean add(Integer id, String name) {
+		demoDao.add(11, "11-name-test["+id+"]");
 		return demoDao.add(id, name);
 	}
 	
